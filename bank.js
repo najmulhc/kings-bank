@@ -1,29 +1,27 @@
-// displayers 
-let dipositDisplay = document.getElementById("diposit");
-let withdrowDisplay = document.getElementById("withdrow");
-let balenceDisplay = document.getElementById("balence");
 let withdrowBalance = 0;
 let depositBalance = 0;
 let balenceFinal = 0;
-let withdrow = parseFloat(document.getElementById("withdrowInput").value);
-
 // if you click diposit button
 document.getElementById("dipositBtn").addEventListener("click", function(){
-   
+    let balenceDisplay = document.getElementById("balence");
     let dipositDisplay = document.getElementById("diposit");
-    let diposit = parseFloat(document.getElementById("dipositInput").value);
+    let dipsitInput = document.getElementById("dipositInput");
+    let diposit = parseFloat(dipsitInput.value);
     depositBalance += diposit;
     dipositDisplay.innerText ="$"+ depositBalance;
     balenceFinal += diposit;
     balenceDisplay.innerHTML = "$"+balenceFinal;
-    document.getElementById("dipositInput").value = "";
+    dipsitInput.value = "";
 });
+
 document.getElementById("withdrowBtn").addEventListener("click", function(){
+    let balenceDisplay = document.getElementById("balence");
     let withdrowDisplay = document.getElementById("withdrow");
-    let withdrow = parseFloat(document.getElementById("withdrowInput").value);
+    let withdrowInput = document.getElementById("withdrowInput");
+    let withdrow = parseFloat(withdrowInput.value);
     withdrowBalance += withdrow;
     withdrowDisplay.innerText = "$"+withdrowBalance;
     balenceFinal -= withdrow;
     balenceDisplay.innerHTML = "$"+balenceFinal;
-    document.getElementById("withdrowInput").value = "";
+    withdrowInput.value = "";
 });
